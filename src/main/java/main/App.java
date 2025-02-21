@@ -66,6 +66,8 @@ public class App
                         Book returnedBook = library.findBook(titleToReturn);
                         if (returnedBook instanceof FictionBook) {
                             ((FictionBook) returnedBook).returnBook();
+                        } else {
+                            System.out.println("Kirjaa ei löytynyt tai sitä ei voi palauttaa.");
                         }
                         break;
                     case 0:
