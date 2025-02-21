@@ -56,6 +56,8 @@ public class App
                         Book borrowedBook = library.findBook(titleToBorrow);
                         if (borrowedBook instanceof FictionBook) {
                             ((FictionBook) borrowedBook).borrow();
+                        } else {
+                            System.out.println("Kirjaa ei löytynyt tai sitä ei voi lainata.");
                         }
                         break;
                     case 4:

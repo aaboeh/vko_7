@@ -15,12 +15,12 @@ public class FictionBook extends Book implements Borrowable {
             copies --;
             System.out.println("Kirja " + title + " on nyt lainattu.");
         } else {
-            System.out.println("Kirjaa ei löytynyt tai sitä ei voi lainata.");
+            System.out.println("Kirjaa" + title + " ei enään ole lainattavissa!");
         }
     }
 
     public void returnBook() {
         copies ++;
-        System.out.println("Kirja " + title + " on nyt palautettu.");
+        System.out.println("Kirja " + title + " on palautettu.");
     }
 }
