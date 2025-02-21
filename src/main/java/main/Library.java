@@ -13,13 +13,22 @@ public class Library {
         return books;
     }
 
-    public void listBooks() (
+    public void listBooks() {
         int bookCount = 0;
-        for (Book bookbooks : iterable) {
+        for (Book book : books) {
             book.displayInfo();
             bookCount += book.copies;
         }
         System.out.println("Kirjojen määrä kirjastossa on: " + bookCount);
-    )
+    }
+
+    public Book findBook(String title) {
+        for (Book book : books) {
+            if (book.title.equals(title)) {
+                return book;
+            }
+        }
+        return null;
+    }
     
 }

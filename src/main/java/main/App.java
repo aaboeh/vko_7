@@ -53,23 +53,17 @@ public class App
                     case 3:
                         System.out.println("Anna lainattavan kirjan nimi:");
                         String titleToBorrow = sc.nextLine();
-                        for (Book book : library.books) {
-                            if (book.title.equals(titleToBorrow)) {
-                                if (book instanceof FictionBook) {
-                                    ((FictionBook) book).borrow();
-                                }
-                            }
+                        Book borrowedBook = library.findBook(titleToBorrow);
+                        if (borrowedBook instanceof FictionBook) {
+                            ((FictionBook) borrowedBook).borrow();
                         }
                         break;
                     case 4:
                         System.out.println("Anna palautettavan kirjan nimi:");
                         String titleToReturn = sc.nextLine();
-                        for (Book book : library.books) {
-                            if (book.title.equals(titleToReturn)) {
-                                if (book instanceof FictionBook) {
-                                    ((FictionBook) book).returnBook();
-                                }
-                            }
+                        Book returnedBook = library.findBook(titleToReturn);
+                        if (returnedBook instanceof FictionBook) {
+                            ((FictionBook) returnedBook).returnBook();
                         }
                         break;
                     case 0:
